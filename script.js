@@ -160,7 +160,7 @@
         async function loadPopularRecipes() {
             try {
                 // Fetch 4 random recipes
-                const recipePromises = Array(4).fill().map(() => 
+                const recipePromises = Array(6).fill().map(() => 
                     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
                         .then(res => res.json())
                         .then(data => data.meals[0])
@@ -258,7 +258,7 @@
                 instructionsList.appendChild(li);
             });
 
-            // BACK BUTTON AND SAVE BUTTON VISIBILITY
+            // Back button and save button visibility
     const saveBtn = document.getElementById('save-recipe-btn');
     const backBtn = document.querySelector('#recipe-page button');
 
@@ -331,7 +331,7 @@
                 //we create an array to save all the meal details
                 const savedMealDetails = [];
                 //we get each value from savedRecipes and call async function fo it
-                 for (const id of savedRecipes) {
+                for (const id of savedRecipes) {
                     let recipeObj = await searchSavedRecipes(id);
                     savedMealDetails.push(recipeObj);
                 }
